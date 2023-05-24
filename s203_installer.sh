@@ -56,11 +56,14 @@ cd /var/www/html > echo
 rm -Rf S203 > echo
 git clone https://github.com/Chakib-Eliott/S203.git &> echo
 echo "Copie du dépôt s203 terminée"
+echo ""
 
 echo "Installation terminée !"
 
+echo ""
 echo "Lancement du site ..."
 firefox localhost/S203 & &> echo
 echo "Lancement du site terminé !"
+echo ""
 
 exit 0
