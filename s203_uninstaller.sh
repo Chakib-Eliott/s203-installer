@@ -7,20 +7,19 @@ then
    exit 1
 fi
 
-pwd > $pwd
+di=$(pwd)
 
 echo "Suppression du site ..."
-cd /var/www/html > echo
-rm -Rf S203 > echo
+cd /var/www/html > /tmp/s203.log
+rm -Rf S203 > /tmp/s203.log
 echo "Suppression du site terminée"
 
 echo ""
 
 echo "Suppression de ce script ..."
-cd .. > echo
-cd $pwd > echo
-cd .. > echo
-rm -Rf s203-installer > echo
+cd $di > /tmp/s203.log
+cd .. > /tmp/s203.log
+rm -Rf s203-installer > /tmp/s203.log
 echo "Suppression du script terminée"
 
 exit 0
