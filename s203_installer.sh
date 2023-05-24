@@ -1,6 +1,12 @@
 #!/bin/bash
 # Authors : Eliott-B, Chakib
 
+if [ $(id -u) -ne 0 ]
+then
+   echo "Ce script doit être lancé en tant que root" 
+   exit 1
+fi
+
 echo "Recherche de HTTPD ..."
 rpm -q httpd > echo
 if [ $? -eq 1 ]
@@ -43,17 +49,18 @@ echo ""
 echo "Démarage du service HTTPD ..."
 systemctl start httpd
 echo "Service HTTPD démarré"
+echo ""
 
 echo "Copie du dépôt s203 ..."
 cd /var/www/html > echo
 rm -Rf S203 > echo
-git clone https://github.com/Chakib-Eliott/S203.git > echo
+git clone https://github.com/Chakib-Eliott/S203.git &> echo
 echo "Copie du dépôt s203 terminée"
 
 echo "Installation terminée !"
 
 echo "Lancement du site ..."
-firefox localhost/S203 & > echo
+firefox localhost/S203 & &> echo
 echo "Lancement du site terminé !"
 
 exit 0
