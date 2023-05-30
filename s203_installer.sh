@@ -58,6 +58,11 @@ git clone https://github.com/Chakib-Eliott/S203.git &> /tmp/s203.log
 echo "Copie du dépôt s203 terminée"
 echo ""
 
+echo "Création de la base de données ..."
+sudo mysql < .conf/s203.sql > /tmp/s203.log
+echo "Création de la base de données terminée"
+echo ""
+
 echo "Installation terminée !"
 
 echo ""
