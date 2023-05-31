@@ -1,8 +1,8 @@
-## s203-installer
+# s203-installer
 
 This is a simple installer for the s203 project. It will install the project and all its dependencies. It will also uninstall the project at the end.
 
-### Usage
+## Usage
 
 ```bash
 git clone https://github.com/Chakib-Eliott/s203-installer.git
@@ -16,3 +16,8 @@ chmod +x *
 (su -u)
 ./s203_uninstaller.sh
 ```
+
+## Authors
+
+* **Chakib** - [Chakib](https://github.com/444chak)
+* **Eliott-B** - [Eliott-B](https://github.com/Eliott-B)
