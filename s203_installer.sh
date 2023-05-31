@@ -8,12 +8,12 @@ then
 fi
 
 echo "Recherche de HTTPD ..."
-rpm -q httpd > /tmp/s203.log
+rpm -q httpd > /dev/null
 if [ $? -eq 1 ]
 then
     echo "HTTPD n'est pas installé"
     echo "Installation de HTTPD ..."
-    yum install httpd -y > /tmp/s203.log
+    yum install httpd -y > /dev/null
     echo "HTTPD est installé"
 else
     echo "HTTPD est déjà installé"
@@ -21,12 +21,12 @@ fi
 echo ""
 
 echo "Recherche de PHP ..."
-rpm -q php > /tmp/s203.log
+rpm -q php > /dev/null
 if [ $? -eq 1 ]
 then
     echo "PHP n'est pas installé"
     echo "Installation de PHP ..."
-    yum install php -y > /tmp/s203.log
+    yum install php -y > /dev/null
     echo "PHP est installé"
 else
     echo "PHP est déjà installé"
@@ -34,12 +34,12 @@ fi
 echo ""
 
 echo "Recherche de MySQL ..."
-rpm -q mysql > /tmp/s203.log
+rpm -q mysql > /dev/null
 if [ $? -eq 1 ]
 then
     echo "MySQL n'est pas installé"
     echo "Installation de MySQL ..."
-    yum install mysql -y > /tmp/s203.log
+    yum install mysql -y > /dev/null
     echo "MySQL est installé"
 else
     echo "MySQL est déjà installé"
@@ -52,14 +52,14 @@ echo "Service HTTPD démarré"
 echo ""
 
 echo "Copie du dépôt s203 ..."
-cd /var/www/html > /tmp/s203.log
+cd /var/www/html > /dev/null
 rm -Rf S203 > echo
-git clone https://github.com/Chakib-Eliott/S203.git &> /tmp/s203.log
+git clone https://github.com/Chakib-Eliott/S203.git &> /dev/null
 echo "Copie du dépôt s203 terminée"
 echo ""
 
 echo "Création de la base de données ..."
-sudo mysql < .conf/s203.sql > /tmp/s203.log
+sudo mysql < .conf/s203.sql > /dev/null
 echo "Création de la base de données terminée"
 echo ""
 
@@ -67,7 +67,7 @@ echo "Installation terminée !"
 
 echo ""
 echo "Lancement du site ..."
-firefox localhost/S203 & &> /tmp/s203.log
+firefox localhost/S203 & &> /dev/null
 echo "Lancement du site terminé !"
 echo ""
 

@@ -10,16 +10,22 @@ fi
 di=$(pwd)
 
 echo "Suppression du site ..."
-cd /var/www/html > /tmp/s203.log
-rm -Rf S203 > /tmp/s203.log
+cd /var/www/html > /dev/null
+rm -Rf S203 > /dev/null
 echo "Suppression du site terminée"
 
 echo ""
 
+echo "Suppresion de la base de données ..."
+sudo mysql < .conf/delete.sql > /dev/null
+echo "Suppression de la base de données terminée"
+
+echo ""
+
 echo "Suppression de ce script ..."
-cd $di > /tmp/s203.log
-cd .. > /tmp/s203.log
-rm -Rf s203-installer > /tmp/s203.log
+cd $di > /dev/null
+cd .. > /dev/null
+rm -Rf s203-installer > /dev/null
 echo "Suppression du script terminée"
 
 exit 0
