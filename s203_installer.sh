@@ -60,7 +60,7 @@ echo ""
 
 echo "Copie du dépôt s203 ..."
 cd /var/www/html > /dev/null
-rm -Rf S203 > echo
+rm -Rf S203 > /dev/null
 git clone https://github.com/Chakib-Eliott/S203.git &> /dev/null
 echo "Copie du dépôt s203 terminée"
 echo ""
