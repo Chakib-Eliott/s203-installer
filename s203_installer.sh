@@ -36,12 +36,12 @@ fi
 echo ""
 
 echo "Recherche de MySQL ..."
-rpm -q mysql > /dev/null
+rpm -q mysql-server > /dev/null
 if [ $? -eq 1 ]
 then
     echo "MySQL n'est pas installé"
     echo "Installation de MySQL ..."
-    yum install mysql -y > /dev/null
+    yum install mysql-server -y > /dev/null
     echo "MySQL est installé"
 else
     echo "MySQL est déjà installé"
@@ -51,6 +51,11 @@ echo ""
 echo "Démarage du service HTTPD ..."
 systemctl start httpd
 echo "Service HTTPD démarré"
+echo ""
+
+echo "Démarage du service MySQL ..."
+systemctl start mysqld
+echo "Service MySQL démarré"
 echo ""
 
 echo "Copie du dépôt s203 ..."
