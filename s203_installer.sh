@@ -7,6 +7,8 @@ then
    exit 1
 fi
 
+di=$(pwd)
+
 echo "Recherche de HTTPD ..."
 rpm -q httpd > /dev/null
 if [ $? -eq 1 ]
@@ -59,6 +61,7 @@ echo "Copie du dépôt s203 terminée"
 echo ""
 
 echo "Création de la base de données ..."
+cd $di
 sudo mysql < .conf/s203.sql > /dev/null
 echo "Création de la base de données terminée"
 echo ""
