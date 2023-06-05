@@ -36,12 +36,12 @@ fi
 echo ""
 
 echo "Recherche de MySQL ..."
-rpm -q mysql-server > /dev/null
+rpm -q mariadb-server > /dev/null
 if [ $? -eq 1 ]
 then
     echo "MySQL n'est pas installé"
     echo "Installation de MySQL ..."
-    yum install mysql-server -y > /dev/null
+    yum install mariadb-server -y > /dev/null
     echo "MySQL est installé"
 else
     echo "MySQL est déjà installé"
@@ -54,7 +54,7 @@ echo "Service HTTPD démarré"
 echo ""
 
 echo "Démarage du service MySQL ..."
-systemctl start mysqld
+systemctl start mariadb
 echo "Service MySQL démarré"
 echo ""
 
