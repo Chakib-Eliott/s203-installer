@@ -71,7 +71,8 @@ echo ""
 
 echo "Création de la base de données ..."
 cd $di
-sudo mysql < .conf/s203.sql > /dev/null
+echo "Entrez S203 pour le mot de passe"
+mysql -p < .conf/s203.sql > /dev/null
 echo "Création de la base de données terminée"
 echo ""
 
