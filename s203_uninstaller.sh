@@ -17,7 +17,8 @@ echo "Suppression du site terminée"
 echo ""
 
 echo "Suppresion de la base de données ..."
-sudo mysql < .conf/delete.sql > /dev/null
+echo 'Entrez S203 pour le mot de passe'
+mysql -p < .conf/delete.sql > /dev/null
 echo "Suppression de la base de données terminée"
 
 echo ""
