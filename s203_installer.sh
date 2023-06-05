@@ -54,6 +54,9 @@ echo "Service HTTPD démarré"
 echo ""
 
 echo "Démarage du service MySQL ..."
+mysqld_safe --skip-grant-tables --skip-networking & &> /dev/null
+mysql < .conf/user.sql &> /dev/null
+mysqladmin shutdown -p < 'S203' &> /dev/null
 systemctl start mariadb
 echo "Service MySQL démarré"
 echo ""

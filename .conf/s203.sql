@@ -9,7 +9,3 @@ CREATE TABLE comment
     comment TEXT,
     date DATE DEFAULT now()
 );
-
-CREATE USER s203 IDENTIFIED BY 's203';
-GRANT ALL PRIVILEGES ON *.* TO s203@localhost;
-FLUSH PRIVILEGES;
